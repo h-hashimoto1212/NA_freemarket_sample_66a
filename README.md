@@ -1,3 +1,6 @@
+<img width="821" alt="スクリーンショット 2020-01-08 11.52.04.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/1513826c-c8c9-e8f4-42c7-8afa17d0288f.png">
+
+
 ## 1. usersテーブル
 
 |Column|Type|Options|
