@@ -1,4 +1,5 @@
-<img width="821" alt="スクリーンショット 2020-01-08 11.52.04.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/1513826c-c8c9-e8f4-42c7-8afa17d0288f.png">
+<img width="792" alt="スクリーンショット 2020-01-08 14.56.19.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/5f3a1256-d59e-7718-139b-d034d16925a1.png">
+
 
 ## 1. usersテーブル
 
