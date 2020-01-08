@@ -62,9 +62,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|large_category_id|references|null: false, foreign_key: true|
-|middle_category_id|references|null: false, foreign_key: true|
-|small_category_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 |brand_id|references|null: false, foreign_key: true|
 |size|int|enum|
 |condition|int|enum|
@@ -101,43 +99,21 @@
 
 ***
 
-## 6. large_categoriesテーブル
+## 6. categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|int||
 ###Association
 - has_many :products
-- has_many :middle_categories
-
-***
-
-## 7. middle_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|large_categories_id|null: false, references|foreign_key: true|
-###Association
-- belongs_to :large_category
-- has_many :small_categories
-- has_many :products
-
-***
-
-
-## 8. small_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string||
-|middle_categories_id|references|null: false, foreign_key: true|
-###Association
-- belongs_to :middle_category
 - has_many :brands_categories
-- has_many :brands, through: :brands_categories
-- has_many :products
+- has_many :brands, through: :brands
+- has_ancestry
 
 ***
 
-## 9. brands_categoriesテーブル
+
+## 7. brands_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -145,12 +121,12 @@
 |category_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :small_category
+- belongs_to :category
 - belongs_to :brand
 
 ***
 
-## 10. brandsテーブル
+## 8. brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -159,11 +135,11 @@
 ### Association
 - has_many :products
 - has_many :brands_categories
-- has_many :small_categories, through: :brands_categories
+- has_many :categories, through: :brands_categories
 
 ***
 
-## 11. buyersテーブル
+## 9. buyersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -178,7 +154,7 @@
 
 ***
 
-## 12. sellersテーブル
+## 10. sellersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -193,7 +169,7 @@
 
 ***
 
-## 13. likesテーブル
+## 11. likesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -206,7 +182,7 @@
 
 ***
 
-## 14. commentsテーブル
+## 12. commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
