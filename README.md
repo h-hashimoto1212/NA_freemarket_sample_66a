@@ -31,7 +31,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |postal_code|int|null: false|
 |prefecture|int|enum, null: false|
 |city|string|null: false|
@@ -47,7 +47,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |number|int|null: false|
 |expiration|date|null: false|
 |security_code|int|null: false|
@@ -61,11 +61,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|large_category_id|references|foreign_key: true|
-|middle_category_id|references|foreign_key: true|
-|small_category_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|large_category_id|references|null: false, foreign_key: true|
+|middle_category_id|references|null: false, foreign_key: true|
+|small_category_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
 |size|int|enum|
 |condition|int|enum|
 |name|string|null: false|
@@ -94,7 +94,7 @@
 ## 5. photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |image|text|null: false|
 ### Association
 - belongs_to :product
@@ -115,7 +115,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|large_categories_id|references|foreign_key: true|
+|large_categories_id|null: false, references|foreign_key: true|
 ###Association
 - belongs_to :large_category
 - has_many :small_categories
@@ -128,7 +128,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
-|middle_categories_id|references|foreign_key: true|
+|middle_categories_id|references|null: false, foreign_key: true|
 ###Association
 - belongs_to :middle_category
 - has_many :brands_categories
@@ -141,8 +141,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|brand_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :small_category
@@ -167,8 +167,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|product_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |evaluate|int|enum, null: false|
 |comment|text|null: false|
 
@@ -182,8 +182,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|product_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |evaluate|int|enum, null: false|
 |comment|text|null: false|
 
@@ -197,8 +197,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|product_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -210,8 +210,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|product_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 |comment|text|null: false|
 
 ### Association
